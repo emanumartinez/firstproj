@@ -1,0 +1,165 @@
+/* seletor universal pra tirar os elementos padrão do browser*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*serve pra que padding e outros atributos não mudem o tamanho da box */
+}
+
+body {
+  /*background color image repeat position/size*/
+  background: var(--bg-url) no-repeat top center/cover;
+  /*shorthand, atalho ^ */
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/* border: px, solid/dashed/dotted..., color */
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px auto;
+  padding: 24px;
+}
+
+/* #profile {
+  text-align: center;
+}
+#profile img {
+  width: 112px;
+} 
+
+alt way to put it in the center; img display is always inline, but can obey rules from a previous element without the "img" thing */
+
+:root {
+  --text-color: white;
+  --bg-url: url(/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --stroke-bg: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --social-link-hover: rgba(255, 255, 255, 0.2);
+  --astro-icon: white url(/MoonStars.svg) no-repeat center;
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --stroke-bg: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --social-link-hover: rgba(0, 0, 0, 0.1);
+  --astro-icon: white url(/Sun.svg) no-repeat center;
+}
+
+#profile {
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+  display: block;
+  margin: auto;
+}
+
+#profile p {
+  font-weight: 500;
+  text-align: center;
+  margin-top: 8px;
+  line-height: 24px;
+}
+
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 0px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0px;
+  background: var(--astro-icon);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 0px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  padding: 8px 0px;
+  display: block;
+  width: 64px;
+  height: 24px;
+  border-radius: 80px;
+  background: var(--stroke-bg);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* lista */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0px;
+}
+
+ul li a {
+  font-weight: 500;
+  border: 1px solid var(--stroke-color);
+  display: flex;
+  justify-content: center;
+  padding: 16px 24px;
+  background: var(--stroke-bg);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  transition: all 0.2s;
+  -webkit-backdrop-filter: blur(4px);
+  /* used to make it accessible from dif browsers. chek caniuse.dom */
+}
+
+ul li a:hover {
+  border: 1px solid var(--text-color);
+  background: var(--surface-color-hover);
+}
+
+#social-links {
+  padding: 24px;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+#social-links a:hover {
+  background-color: var(--social-link-hover);
+}
+
+footer {
+  padding: 24px 0px;
+  text-align: center;
+  font-size: 14px;
+}
